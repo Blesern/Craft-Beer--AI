@@ -24,12 +24,13 @@
         section {
             margin-bottom: 2rem;
         }
-        .chart-placeholder {
-            background-color: #eee;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .chart-container {
+            margin: 2rem 0;
+        }
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
             margin: 1rem 0;
         }
     </style>
@@ -46,37 +47,48 @@
             <p>Craft-Beer-AI utilizes advanced AI algorithms to analyze various factors influencing craft beer prices. Our goal is to provide brewers and consumers with insights into pricing trends and correlations.</p>
         </section>
 
-        <section id="key-correlations">
-            <h2>Key Price Correlations</h2>
-            <ul>
-                <li>Ingredient Quality: Higher quality ingredients strongly correlate with higher prices</li>
-                <li>ABV (Alcohol By Volume): Beers with higher ABV tend to be priced higher</li>
-                <li>Brand Reputation: Established craft breweries often command premium prices</li>
-                <li>Production Scale: Smaller batch sizes typically correlate with higher prices</li>
-            </ul>
-        </section>
-
         <section id="data-visualization">
-            <h2>Price Correlation Visualization</h2>
-            <p>Our AI analysis reveals interesting price correlations across different craft beer styles and regions.</p>
-            <div class="chart-placeholder">
-                [Placeholder for Price Correlation Chart]
+            <h2>Price Correlation Visualizations</h2>
+            <p>Our AI analysis reveals interesting price correlations across different craft beer attributes.</p>
+            
+            <div class="chart-container">
+                <h3>Size vs Price Correlation</h3>
+                <img src="corr size price.png" alt="Correlation between Size and Price">
+                <p>This graph shows the relationship between the size of the beer container and its price.</p>
+            </div>
+
+            <div class="chart-container">
+                <h3>Country vs Price Correlation</h3>
+                <img src="corr country price.png" alt="Correlation between Country and Price">
+                <p>This visualization demonstrates how prices vary across different countries of origin.</p>
+            </div>
+
+            <div class="chart-container">
+                <h3>ABV vs Price Correlation</h3>
+                <img src="corr abv price.png" alt="Correlation between ABV and Price">
+                <p>Here we see the correlation between Alcohol By Volume (ABV) and the price of craft beers.</p>
+            </div>
+
+            <div class="chart-container">
+                <h3>Correlation Matrix</h3>
+                <img src="matrix corr.png" alt="Correlation Matrix">
+                <p>This matrix provides an overview of correlations between various factors affecting craft beer prices.</p>
             </div>
         </section>
 
-        <section id="case-study">
-            <h2>Case Study: IPA Pricing Trends</h2>
-            <p>Our analysis shows that the price of IPAs is strongly correlated with hop varieties used. Craft beers featuring rare or trendy hop strains are priced on average 20% higher than those using common varieties.</p>
+        <section id="key-findings">
+            <h2>Key Findings</h2>
+            <ul>
+                <li>Beer size appears to have a significant impact on pricing.</li>
+                <li>Prices vary notably across different countries, possibly due to local market conditions and import costs.</li>
+                <li>There's a clear correlation between ABV and price, with higher alcohol content generally commanding higher prices.</li>
+                <li>The correlation matrix reveals complex relationships between multiple factors influencing craft beer pricing.</li>
+            </ul>
         </section>
 
-        <section id="future-analysis">
-            <h2>Upcoming Analyses</h2>
-            <p>We're expanding our AI models to explore:</p>
-            <ul>
-                <li>Seasonal pricing fluctuations</li>
-                <li>Impact of local economic factors on craft beer pricing</li>
-                <li>Price elasticity of demand for different craft beer styles</li>
-            </ul>
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>Our analysis demonstrates that craft beer pricing is influenced by a variety of factors including size, country of origin, and ABV. These insights can help brewers make informed pricing decisions and assist consumers in understanding the market.</p>
         </section>
     </main>
 
