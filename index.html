@@ -65,6 +65,11 @@
             width: 100%;
             height: 100%;
         }
+        .chart-description {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #555;
+        }
         ul {
             padding-left: 20px;
         }
@@ -103,26 +108,31 @@
                     <h3>Interactive Beer Price Chart</h3>
                     <p>Click on the bars to see more details about each beer type.</p>
                     <canvas id="myChart"></canvas>
+                    <p class="chart-description">This interactive bar chart displays the average prices of different beer types. It provides a quick comparison of pricing across popular craft beer styles.</p>
                 </div>
 
                 <div class="chart-container">
                     <h3>Size vs Price Correlation</h3>
                     <img src="corr size price.png" alt="Correlation between Size and Price">
+                    <p class="chart-description">This scatter plot shows the relationship between beer container size and price. Generally, larger containers tend to have higher prices, but the correlation isn't always linear.</p>
                 </div>
 
                 <div class="chart-container">
                     <h3>Country vs Price Correlation</h3>
                     <img src="corr country price.png" alt="Correlation between Country and Price">
+                    <p class="chart-description">This box plot demonstrates how craft beer prices vary across different countries of origin. It highlights median prices, price ranges, and outliers for each country.</p>
                 </div>
 
                 <div class="chart-container">
                     <h3>ABV vs Price Correlation</h3>
                     <img src="corr abv price.png" alt="Correlation between ABV and Price">
+                    <p class="chart-description">This scatter plot illustrates the correlation between Alcohol By Volume (ABV) and price. Higher ABV beers tend to be more expensive, but there's significant variation.</p>
                 </div>
 
                 <div class="chart-container">
                     <h3>Correlation Matrix</h3>
                     <img src="matrix corr.png" alt="Correlation Matrix">
+                    <p class="chart-description">This heatmap shows the correlation coefficients between various factors affecting craft beer prices. Darker colors indicate stronger correlations, either positive or negative.</p>
                 </div>
             </section>
 
