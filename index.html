@@ -6,24 +6,47 @@
     <title>Craft-Beer-AI: Price Correlation Analysis</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         header {
-            background-color: #f4f4f4;
-            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #0066cc;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
         }
         section {
+            background-color: white;
             margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .chart-container {
             margin: 2rem 0;
@@ -32,77 +55,96 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 1rem 0;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         #myChart {
             max-width: 100%;
             height: auto;
-            margin: 1rem 0;
+            margin: 1rem auto;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Craft-Beer-AI</h1>
-        <p>Analyzing Price Correlations in the Craft Beer Market</p>
+        <div class="container">
+            <h1>Craft-Beer-AI</h1>
+            <p>Analyzing Price Correlations in the Craft Beer Market</p>
+        </div>
     </header>
 
-    <main>
-        <section id="introduction">
-            <h2>Understanding Craft Beer Pricing</h2>
-            <p>Craft-Beer-AI utilizes advanced AI algorithms to analyze various factors influencing craft beer prices. Our goal is to provide brewers and consumers with insights into pricing trends and correlations.</p>
-        </section>
+    <div class="container">
+        <main>
+            <section id="introduction">
+                <h2>Understanding Craft Beer Pricing</h2>
+                <p>Craft-Beer-AI utilizes advanced AI algorithms to analyze various factors influencing craft beer prices. Our goal is to provide brewers and consumers with insights into pricing trends and correlations.</p>
+            </section>
 
-        <section id="data-visualization">
-            <h2>Price Correlation Visualizations</h2>
-            <p>Our AI analysis reveals interesting price correlations across different craft beer attributes.</p>
-            
-            <div class="chart-container">
-                <h3>Size vs Price Correlation</h3>
-                <img src="corr size price.png" alt="Correlation between Size and Price">
-                <p>This graph shows the relationship between the size of the beer container and its price.</p>
-            </div>
+            <section id="data-visualization">
+                <h2>Price Correlation Visualizations</h2>
+                <p>Our AI analysis reveals interesting price correlations across different craft beer attributes.</p>
+                
+                <div class="chart-container">
+                    <h3>Size vs Price Correlation</h3>
+                    <img src="corr size price.png" alt="Correlation between Size and Price">
+                    <p>This graph shows the relationship between the size of the beer container and its price.</p>
+                </div>
 
-            <div class="chart-container">
-                <h3>Country vs Price Correlation</h3>
-                <img src="corr country price.png" alt="Correlation between Country and Price">
-                <p>This visualization demonstrates how prices vary across different countries of origin.</p>
-            </div>
+                <div class="chart-container">
+                    <h3>Country vs Price Correlation</h3>
+                    <img src="corr country price.png" alt="Correlation between Country and Price">
+                    <p>This visualization demonstrates how prices vary across different countries of origin.</p>
+                </div>
 
-            <div class="chart-container">
-                <h3>ABV vs Price Correlation</h3>
-                <img src="corr abv price.png" alt="Correlation between ABV and Price">
-                <p>Here we see the correlation between Alcohol By Volume (ABV) and the price of craft beers.</p>
-            </div>
+                <div class="chart-container">
+                    <h3>ABV vs Price Correlation</h3>
+                    <img src="corr abv price.png" alt="Correlation between ABV and Price">
+                    <p>Here we see the correlation between Alcohol By Volume (ABV) and the price of craft beers.</p>
+                </div>
 
-            <div class="chart-container">
-                <h3>Correlation Matrix</h3>
-                <img src="matrix corr.png" alt="Correlation Matrix">
-                <p>This matrix provides an overview of correlations between various factors affecting craft beer prices.</p>
-            </div>
-        </section>
+                <div class="chart-container">
+                    <h3>Correlation Matrix</h3>
+                    <img src="matrix corr.png" alt="Correlation Matrix">
+                    <p>This matrix provides an overview of correlations between various factors affecting craft beer prices.</p>
+                </div>
+            </section>
 
-        <section id="interactive-chart">
-            <h2>Interactive Beer Price Chart</h2>
-            <p>Click on the bars to see more details about each beer type.</p>
-            <canvas id="myChart"></canvas>
-        </section>
+            <section id="interactive-chart">
+                <h2>Interactive Beer Price Chart</h2>
+                <p>Click on the bars to see more details about each beer type.</p>
+                <canvas id="myChart"></canvas>
+            </section>
 
-        <section id="key-findings">
-            <h2>Key Findings</h2>
-            <ul>
-                <li>Beer size appears to have a significant impact on pricing.</li>
-                <li>Prices vary notably across different countries, possibly due to local market conditions and import costs.</li>
-                <li>There's a clear correlation between ABV and price, with higher alcohol content generally commanding higher prices.</li>
-                <li>The correlation matrix reveals complex relationships between multiple factors influencing craft beer pricing.</li>
-            </ul>
-        </section>
+            <section id="key-findings">
+                <h2>Key Findings</h2>
+                <ul>
+                    <li>Beer size appears to have a significant impact on pricing.</li>
+                    <li>Prices vary notably across different countries, possibly due to local market conditions and import costs.</li>
+                    <li>There's a clear correlation between ABV and price, with higher alcohol content generally commanding higher prices.</li>
+                    <li>The correlation matrix reveals complex relationships between multiple factors influencing craft beer pricing.</li>
+                </ul>
+            </section>
 
-        <section id="conclusion">
-            <h2>Conclusion</h2>
-            <p>Our analysis demonstrates that craft beer pricing is influenced by a variety of factors including size, country of origin, and ABV. These insights can help brewers make informed pricing decisions and assist consumers in understanding the market.</p>
-        </section>
-    </main>
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <p>Our analysis demonstrates that craft beer pricing is influenced by a variety of factors including size, country of origin, and ABV. These insights can help brewers make informed pricing decisions and assist consumers in understanding the market.</p>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2023 Craft-Beer-AI Project. All rights reserved.</p>
@@ -118,14 +160,38 @@
                     datasets: [{
                         label: 'Average Price ($)',
                         data: [7, 8, 5, 6, 7],
-                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                        backgroundColor: 'rgba(52, 152, 219, 0.6)',
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        borderWidth: 1
                     }]
                 },
                 options: {
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Price ($)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Beer Type'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Average Beer Prices by Type',
+                            font: {
+                                size: 18
+                            }
                         }
                     },
                     onClick: (event, elements) => {
