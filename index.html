@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Craft-Beer-AI: Price Correlation Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,6 +32,11 @@
             max-width: 100%;
             height: auto;
             display: block;
+            margin: 1rem 0;
+        }
+        #myChart {
+            max-width: 100%;
+            height: auto;
             margin: 1rem 0;
         }
     </style>
@@ -76,6 +82,12 @@
             </div>
         </section>
 
+        <section id="interactive-chart">
+            <h2>Interactive Beer Price Chart</h2>
+            <p>Click on the bars to see more details about each beer type.</p>
+            <canvas id="myChart"></canvas>
+        </section>
+
         <section id="key-findings">
             <h2>Key Findings</h2>
             <ul>
@@ -95,5 +107,36 @@
     <footer>
         <p>&copy; 2023 Craft-Beer-AI Project. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['IPA', 'Stout', 'Lager', 'Wheat', 'Ale'],
+                    datasets: [{
+                        label: 'Average Price ($)',
+                        data: [7, 8, 5, 6, 7],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            alert(`You clicked on ${myChart.data.labels[index]} with an average price of $${myChart.data.datasets[0].data[index]}`);
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
